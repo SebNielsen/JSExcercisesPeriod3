@@ -9,15 +9,15 @@ var db = require("../db/mongo");
 var server;
 var TEST_PORT = 3300;
 
-beforeEach(function(done){
+before(function(done){
+    db.connect("mongodb://test:test@ds023398.mlab.com:23398/first-mongodb");
     server = http.createServer(app);
     server.listen(TEST_PORT,function(){
-        db.connect("mongodb://test:test@ds023398.mlab.com:23398/first-mongodb");
         done();
     })
 });
 
-afterEach(function(done){
+after(function(done){
     server.close();
     done();
 });

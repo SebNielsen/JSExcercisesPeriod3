@@ -2,11 +2,11 @@
  * Created by sebastiannielsen on 08/03/2016.
  */
 var connection = require("../db/mongo");
-var mongoOp = connection.get();
+var mongoDB = connection.get();
 
 
 exports.addJoke = function(joke,callback){
-    var db = new mongoOp();
+    var db = new mongoDB();
     db.joke = joke.joke;
     db.type = joke.type;
     db.reference = joke.reference;
@@ -23,7 +23,7 @@ exports.addJoke = function(joke,callback){
 };
 
 exports.allJokes =  function(callback){
-    mongoOp.find({},function(err,data){
+    mongoDB.find({},function(err, data){
         // Mongo command to fetch all data from collection.
         if(err) {
             callback(err);
@@ -34,7 +34,7 @@ exports.allJokes =  function(callback){
 
 exports.findJoke = function(id, callback){
     // This will run Mongo Query to fetch data based on ID.
-    mongoOp.findById(id,function(err,data){
+    mongoDB.findById(id,function(err, data){
         if(err) {
             callback(err)
         }
@@ -43,7 +43,7 @@ exports.findJoke = function(id, callback){
 };
 
 exports.editJoke = function(jokeToEdit,changes,callback) {
-    mongoOp.findById(jokeToEdit, function (err, data) {
+    mongoDB.findById(jokeToEdit, function (err, data) {
         if (err) {
             callback(err);
         } else {
@@ -76,12 +76,12 @@ exports.editJoke = function(jokeToEdit,changes,callback) {
 };
 
 exports.deleteJoke = function(id, callback){
-    mongoOp.findById(id, function (err, data) {
+    mongoDB.findById(id, function (err, data) {
         if (err) {
             callback(err);
         } else {
             // data exists, remove it.
-            mongoOp.remove({_id: id}, function (err) {
+            mongoDB.remove({_id: id}, function (err) {
                 if (err) {
                     callback(err);
                 }
@@ -92,7 +92,7 @@ exports.deleteJoke = function(id, callback){
 };
 
 exports.randomJoke =  function(callback){
-    mongoOp.find({},function(err,data){
+    mongoDB.find({},function(err, data){
         // Mongo command to fetch all data from collection.
         if(err) {
             callback(err);

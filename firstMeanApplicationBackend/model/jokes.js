@@ -113,6 +113,6 @@ function getCurrentDate(){
     if(mm<10) {
         mm='0'+mm
     }
-    today = mm+'/'+dd+'/'+yyyy;
+    today = dd+'/'+mm+'/'+yyyy;
     return today;
 };

@@ -57,22 +57,22 @@ app.controller('Controller', ['JokeFactory',function (JokeFactory) {
     }]);
   
 app.factory('JokeFactory', ['$http', function ($http) {
-    var baseURL = 'http://firstMeanOpenshift-sn130.rhcloud.com/api';
+    var baseURI = 'http://firstmean-sn130.rhcloud.com/api';
     
     var fetchJokesFromDB = function () {
-        return $http.get(baseURL+'/jokes');
+        return $http.get(baseURI+'/jokes');
     };
     
     var fetchRandomJokeFromDB = function () {
-        return $http.get(baseURL+'/jokes/random');
+        return $http.get(baseURI+'/jokes/random');
     };
     
     var updateJokeInDB =  function (id,joke) {
-        return $http.put(baseURL+'/joke/'+id, joke);
+        return $http.put(baseURI+'/joke/'+id, joke);
     };
     
     var removeJokeFromDB = function (id) {
-        return $http.delete(baseURL+'/joke/'+id);
+        return $http.delete(baseURI+'/joke/'+id);
     };
     
     return {

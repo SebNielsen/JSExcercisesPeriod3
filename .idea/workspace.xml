@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20715e05-977b-4dd5-a1d3-fdb4d079528c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/firstMeanApplicationFrontend/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/firstMeanApplicationFrontend/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/firstMeanApplicationFrontend/views/alljokes/alljokes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/firstMeanApplicationFrontend/views/createjoke/createjoke.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/firstMeanApplicationFrontend/views/home/home.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/firstMeanApplicationBackend/model/jokes.js" afterPath="$PROJECT_DIR$/firstMeanApplicationBackend/model/jokes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/firstMeanApplicationBackend/test/test.js" afterPath="$PROJECT_DIR$/firstMeanApplicationBackend/test/test.js" />
     </list>
     <ignored path="Period3.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,14 +80,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/firstMeanApplicationBackend/test/test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5852535">
+            <state vertical-scroll-proportion="0.0">
               <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
                 <element signature="e#0#53#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/firstMeanApplicationFrontend/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -280,7 +283,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="firstMeanApplicationBackend" />
+              <option name="myItemId" value="firstMeanApplicationFrontend" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -295,10 +298,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="firstMeanApplicationBackend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -630,11 +629,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/firstMeanApplicationBackend/test/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5852535">
+        <state vertical-scroll-proportion="0.0">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
             <element signature="e#0#53#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firstMeanApplicationFrontend/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

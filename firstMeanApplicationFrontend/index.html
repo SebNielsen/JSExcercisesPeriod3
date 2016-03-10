@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fist Mean Application</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="./bower_components/angular/angular.js"></script>
+        <script src="./bower_components/angular-route/angular-route.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body ng-app="demoApp" ng-controller="Controller as ctrl">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand">First Mean Application</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#/home">Home</a></li>
+                        <li><a href="#/alljokes">All Jokes</a></li>
+                        <li><a href="#/createjoke">Add new Joke</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="container">
+                <div style="margin-top: 85px;">
+                    <div class="alert alert-danger" role="alert" ng-show="ctrl.error">{{ctrl.errorMsg}}</div>
+                    <div class="alert alert-success" role="alert" ng-show="ctrl.success">{{ctrl.successMsg}}</div>
+                    <div ng-view></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

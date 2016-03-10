@@ -1,0 +1,36 @@
+<h1>All Jokes</h1>
+<table class = "table" ng-init="ctrl.fetchJokes();">
+    <thead>
+        <tr style="background-color: gainsboro">
+            <th>Joke</th>
+            <th>Type</th>
+            <th>Author</th>
+            <th>URL</th>
+            <th>Last Edited</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat-start="joke in ctrl.jokes">
+            <td>{{joke.joke}}</td>
+            <td>{{joke.type}}</td>
+            <td>{{joke.reference.author}}</td>
+            <td>{{joke.reference.link}}</td>
+            <td>{{joke.lastEdited}}</td>
+            <td>
+                <button class="btn btn-warning" ng-if="joke.expanded" ng-click="joke.expanded = false">Hide Joke</button>
+                <button class="btn btn-warning" ng-if="!joke.expanded" ng-click="joke.expanded = true">Update <span class="glyphicon glyphicon-refresh"></span></button>
+            </td>
+            <td><button class="btn btn-danger" ng-click="ctrl.removeJoke(joke._id)">Delete <span class="glyphicon glyphicon-trash"></span></button></td>
+        </tr>
+        <tr ng-if="joke.expanded" ng-repeat-end="" ng-init="ctrl.updatedJoke = joke">
+            <td><input type="text" ng-model="ctrl.updatedJoke.joke"></td>
+            <td><input type="text" ng-model="ctrl.updatedJoke.type"></td>
+            <td><input type="text" ng-model="ctrl.updatedJoke.reference.author"></td>
+            <td><input type="text" ng-model="ctrl.updatedJoke.reference.link"></td>
+            <td><button class="btn btn-primary" ng-click="ctrl.updateJoke()">Update joke</button></td>
+        </tr>
+    </tbody>
+</table>
+

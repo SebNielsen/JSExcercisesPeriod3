@@ -57,7 +57,7 @@ app.controller('Controller', ['JokeFactory',function (JokeFactory) {
     }]);
   
 app.factory('JokeFactory', ['$http', function ($http) {
-    var baseURL = 'http://firstmean-sn130.rhcloud.com/api';
+    var baseURL = 'http://firstMeanOpenshift-sn130.rhcloud.com/api';
     
     var fetchJokesFromDB = function () {
         return $http.get(baseURL+'/jokes');

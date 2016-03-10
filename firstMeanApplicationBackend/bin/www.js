@@ -1,5 +1,5 @@
 var app = require('./../app');
-var debug = require('debug')('firstmean:server');
+var debug = require('debug')('firstMeanApplicationBackend:server');
 var http = require('http');
 
 app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000);

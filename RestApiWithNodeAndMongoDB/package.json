@@ -1,0 +1,22 @@
+{
+  "name": "node-mongo",
+  "version": "1.0.0",
+  "description": "Node.js and MongoDb",
+  "main": "Server.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keyword": [
+    "Node.js",
+    "mongoDb"
+  ],
+  "author": "Sebastian Nielsen",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "chai": "^3.5.0",
+    "express": "^4.13.4",
+    "mocha": "^2.4.5",
+    "mongoose": "^4.4.6"
+  }
+}

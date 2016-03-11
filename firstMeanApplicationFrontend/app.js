@@ -18,11 +18,18 @@ var app = angular.module("demoApp", ['ngRoute'])
   });
 }]);
 
-app.controller('Controller', ['JokeFactory', '$route',function (JokeFactory, $route) {
+app.controller('Controller', ['JokeFactory', '$route','$rootScope',function (JokeFactory, $route, $rootScope) {
         var self = this;
-        
-        self.newJoke = {};
-        
+
+        self.createJoke = function(){
+            JokeFactory.createJokeInDB(self.newJoke).then(
+                function(result) {
+                    $rootScope.msg = result.data.message;
+                    $rootScope.success = true;
+                    $route.reload();
+                });
+        };
+
         self.fetchJokes = function(){
             JokeFactory.fetchJokesFromDB().then(
                 function(result) {
@@ -39,8 +46,9 @@ app.controller('Controller', ['JokeFactory', '$route',function (JokeFactory, $ro
         self.updateJoke = function() {
             JokeFactory.updateJokeInDB(self.updatedJoke).then(
                 function(result) {
+                    $rootScope.msg = result.data.message;
+                    $rootScope.success = true;
                     $route.reload();
-                    self.successMsg = result.data.message;
                 });
         };
         
@@ -48,8 +56,9 @@ app.controller('Controller', ['JokeFactory', '$route',function (JokeFactory, $ro
             if(confirm("Are you sure you wanna delete this joke")){
                 JokeFactory.removeJokeFromDB(id).then(
                     function(result) {
+                        $rootScope.msg = result.data.message;
+                        $rootScope.success = true;
                         $route.reload();
-                        self.successMsg = result.data.message;
                     });
             }
         };
@@ -57,7 +66,11 @@ app.controller('Controller', ['JokeFactory', '$route',function (JokeFactory, $ro
   
 app.factory('JokeFactory', ['$http', function ($http) {
     var baseURI = 'http://firstmean-sn130.rhcloud.com/api';
-    
+
+    var createJokeInDB = function(joke) {
+        return $http.post(baseURI+'/jokes', joke);
+    };
+
     var fetchJokesFromDB = function () {
         return $http.get(baseURI+'/jokes');
     };
@@ -75,6 +88,7 @@ app.factory('JokeFactory', ['$http', function ($http) {
     };
     
     return {
+        createJokeInDB: createJokeInDB,
         fetchJokesFromDB: fetchJokesFromDB,
         fetchRandomJokeFromDB: fetchRandomJokeFromDB,
         updateJokeInDB: updateJokeInDB,

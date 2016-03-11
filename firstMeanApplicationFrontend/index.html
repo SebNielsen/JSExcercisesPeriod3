@@ -23,13 +23,11 @@
                     </ul>
                 </div>
             </nav>
-            <div class="container">
-                <div style="margin-top: 85px;">
-                    <div class="alert alert-danger" role="alert" ng-show="ctrl.error">{{ctrl.errorMsg}}</div>
-                    <div class="alert alert-success" role="alert" ng-show="ctrl.success">{{ctrl.successMsg}}</div>
-                    <div ng-view></div>
-                </div>
+            <div style="margin-top: 30px;">
+                <div class="alert alert-danger" role="alert" ng-show="ctrl.error">{{msg}}</div>
+                <div class="alert alert-success" role="alert" ng-show="success">{{msg}}</div>
             </div>
+            <div ng-view></div>
         </div>
     </body>
 </html>

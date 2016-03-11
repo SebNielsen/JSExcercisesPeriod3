@@ -1,10 +1,22 @@
-<div class="col-md-8">
-    <h1>Add new Joke</h1>
-    <form class="form-inline" role="form">
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Enter Joke" ng-model="ctrl.newJoke.joke">
-            <input type="text" class="form-control" placeholder="Enter type" ng-model="ctrl.newJoke.type">
-        </div>
-        <button type="submit" class="btn btn-primary" ng-click="ctrl.createJoke()">Add Joke</button>
-    </form>
-</div>
+<h1>Add new Joke</h1>
+<form role="form" ng-submit="ctrl.createJoke()">
+    <div class="form-group col-sm-8">
+        <label for="joke">Joke:</label>
+        <input type="text" class="form-control" id="joke" ng-model="ctrl.newJoke.joke" placeholder="Enter Joke" required>
+    </div>
+    <div class="form-group col-sm-4">
+        <label for="type">Type:</label>
+        <input type="text" class="form-control" id="type" ng-model="ctrl.newJoke.type" placeholder="Enter Type" required>
+    </div>
+    <div class="form-group col-sm-4">
+        <label for="author">Author:</label>
+        <input type="text" class="form-control" id="author" ng-model="ctrl.newJoke.reference.author" placeholder="Enter Author" required>
+    </div>
+    <div class="form-group col-sm-8">
+        <label for="link">URL:</label>
+        <input type="text" class="form-control" id="link" ng-model="ctrl.newJoke.reference.link" placeholder="Enter URL" required>
+    </div>
+    <div class="form-group col-sm-2">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>

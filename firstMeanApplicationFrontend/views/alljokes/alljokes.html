@@ -19,16 +19,16 @@
             <td>{{joke.reference.link}}</td>
             <td>{{joke.lastEdited}}</td>
             <td>
-                <button class="btn btn-warning" ng-if="joke.expanded" ng-click="joke.expanded = false">Hide Joke</button>
+                <button class="btn btn-warning" ng-if="joke.expanded" ng-click="joke.expanded = false">Cancel <span class="glyphicon glyphicon-remove"></span></button>
                 <button class="btn btn-warning" ng-if="!joke.expanded" ng-click="joke.expanded = true">Update <span class="glyphicon glyphicon-refresh"></span></button>
             </td>
             <td><button class="btn btn-danger" ng-click="ctrl.removeJoke(joke._id)">Delete <span class="glyphicon glyphicon-trash"></span></button></td>
         </tr>
         <tr ng-if="joke.expanded" ng-repeat-end="" ng-init="ctrl.updatedJoke = joke">
-            <td><input type="text" ng-model="ctrl.updatedJoke.joke"></td>
-            <td><input type="text" ng-model="ctrl.updatedJoke.type"></td>
-            <td><input type="text" ng-model="ctrl.updatedJoke.reference.author"></td>
-            <td><input type="text" ng-model="ctrl.updatedJoke.reference.link"></td>
+            <td><input type="text" ng-model="ctrl.updatedJoke.joke" class="form-control"></td>
+            <td><input type="text" ng-model="ctrl.updatedJoke.type" class="form-control"></td>
+            <td><input type="text" ng-model="ctrl.updatedJoke.reference.author" class="form-control"></td>
+            <td><input type="text" ng-model="ctrl.updatedJoke.reference.link" class="form-control"></td>
             <td><button class="btn btn-primary" ng-click="ctrl.updateJoke()">Update joke</button></td>
         </tr>
     </tbody>

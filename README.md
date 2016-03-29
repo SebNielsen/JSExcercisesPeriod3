@@ -195,7 +195,11 @@ to consistency, most users wouldn't exactly enjoy if all their cart sessions wen
 
 For an example see the firstRedis folder.
 
-###9. Explain, using a relevant example, how redis (or a similar) can increase scalability (drastic) for a server using server side sessions
+###9. Explain, using a relevant example, how redis (or a similar) can increase scalability (drastic) for a server using server side sessions?
+When your customer or user logs in, they authenticate and receive a token. This token then allows them to interact
+with any server in your web tier - the token is sent back and forth each time. There is no need for a "master" server
+and "slave" servers, because each server is the same. This allows you to scale horizontally very easily. The session
+data is then stored in a fast database like Redis.
 
 ###10. Explain, using a relevant example, a full MEAN application including relevant test cases to test the REST-API?
 See the firstMeanApplicationBackend folder.
